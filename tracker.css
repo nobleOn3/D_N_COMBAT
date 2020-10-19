@@ -1,0 +1,192 @@
+/*orange #FCB07E Green #51CD5D  steel blue #3581B8  Platnium #EBE9E9 Gunmetal #012A36*/
+
+.bot{
+    position:fixed;
+	bottom:0;
+	width:100%;
+	height:78px;			
+}
+
+.menu{
+    float:right;
+    width: 225px;
+    height: 400px;
+    margin-right:0px;
+    margin-top:105px;
+}
+
+.menu_buttons{
+    float:right;
+    width: 120px;
+    margin-left:0;
+    padding-left:0;
+}
+
+.menu_button{
+    height: 40px;
+    width: 120px;
+    background-color: #F5D451;
+    border:3px solid #012A36;
+    color: #012A36;
+    transition-duration: 0.4s;
+}
+
+.menu_button:hover{
+    background-color: #EBE9E9;
+}
+.sub_menu{
+    float: left;
+    background-color:#012A36;
+    width: 105px;
+    height: 200px;
+}
+
+.sub_menu_found{
+    float: left;
+    background-color:#51CD5D;
+    width: 100px;
+    height: 200px;
+    transition: 0.4s;
+
+}
+#name, #initiative, #health_pool{
+    width: 85px;
+    /*margin-right: 5px;*/
+    margin-left:5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#spell_name, #duration{
+    width: 85px;
+    /*margin-right: 5px;*/
+    margin-left:5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#add_combatant, #add_spell, #add_t_hp{
+    width:74px;
+    margin-right: 13px;
+    margin-left:13px;
+}
+#reset{
+    width:74px;
+    margin-right: 13px;
+    margin-left:13px;
+    margin-top:10px;
+}
+
+#victim, #value, #t_hp_target, #t_hp{
+    width: 90px;
+    /*margin-right: 5px;*/
+    margin-left:5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#attack, #heal{
+    width: 60px;
+    margin-right: 30%;
+    margin-left:20%;
+}
+
+#welcome_box{
+    float:left;
+    margin-top:0px;
+    padding-top:0px;
+    clear:both;
+}
+
+#welcome{
+    /*float:left;*/
+    width: 150px;
+    height: 150px; 
+}
+
+#w_message{
+    /*text-align: left;*/
+    font-size: 16px;
+    margin-top: 5px;
+    margin-right: 0px;
+    color:#EBE9E9;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: #51CD5D; 
+}
+
+#displays{
+    margin: auto;
+    width: 40%;
+    border: 1px solid #3581B8;
+}
+
+
+#char_display {
+    width: 100%;
+    height: 355px;
+    background-color: #EBE9E9;
+    margin-bottom: 20px;
+    /* margin-right: 30%;
+    margin-left: 30%; */
+    margin-top: 100px;
+    
+}
+
+#spl_display {
+    width: 100%;
+    height: 275px;
+    background-color: #EBE9E9;
+    /* margin-right: 30%;
+    margin-left: 30%; */
+}
+
+#c_label, #s_label{
+    text-align:center;
+    margin-bottom: 5px;
+    color: #51CD5D;
+}
+
+#c_table{
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%; 
+    text-align: center;
+}
+
+#s_table{
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%; 
+    text-align: center;
+}
+
+#c_table td{
+    width: 25%;
+    font-size: 12px;
+    color: #012A36
+}
+
+#s_table td {
+    width:50%;
+    font-size:14px;
+    color: #012A36;
+}
+
+#next_round{
+    margin-left: 47%;
+    margin-right: 43%;
+    margin-top: 5px;
+    background-color:  #F5D451;
+    border:3px solid #012A36;
+    transition-duration: 0.4s;
+    border-radius: 2px;
+    color: #012A36;
+}
+
+#next_round:hover{
+    background-color: #EBE9E9;
+}
+
+body{
+    background-color: #3581B8;
+}

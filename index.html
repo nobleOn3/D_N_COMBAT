@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons & Combat</title>
+    <link rel="stylesheet" href="tracker.css">
+</head>
+<body>
+    <div id="welcome_box">
+        <img id="welcome" src="DnCombat_logo_v2_cropped.png">
+        <pre id="w_message">
+        The 
+        best 
+        place 
+        to 
+        keep 
+        your 
+        party's 
+        spells 
+        in check!</pre>
+    </div>
+
+    <div class="menu">
+        <div class = "menu_buttons">
+            <button class= "menu_button" id = "add_C_menu">Add Combatant</button> </br>
+            <button class= "menu_button" id = "add_S_menu">Add Spell</button> </br>
+            <button class= "menu_button" id = "att_heal_menu">Attack / Heal</button>
+            <button class= "menu_button" id = "add_t_hp_menu">Temporary HP</button>
+            <button class= "menu_button" id = "add_misc">Miscellaneous</button>
+        </div>
+        <div class="sub_menu" id="combatant_menu" hidden>
+            <input id="name" placeholder="Name"></br>
+            <input id="initiative" placeholder="Initiative"></br>
+            <input id="health_pool" placeholder="Hp"> </br>
+            <button id="add_combatant">Add</button><br>
+        </div>
+        <div class="sub_menu" id="spell_menu" hidden>
+            <input id="spell_name" placeholder="Spell Name"> </br>
+            <input id="duration" placeholder="Duration"> </br>
+            <button id="add_spell">Add</button>
+        </div>
+        <div class="sub_menu" id="att/heal_menu" hidden>
+            <input id="victim" placeholder="Combatant Name"> </br>
+            <input id="value" placeholder="Damage/Healing"> </br>
+            <button id="attack">Attack</button>
+            <button id="heal">Heal</button>
+        </div>
+        <div class="sub_menu" id="t_hp_menu" hidden>
+            <input id="t_hp_target" placeholder="Combatant Name">
+            <input id="t_hp" placeholder="Temporary HP"></br>
+            <button id="add_t_hp">Apply</button>
+        </div>
+        <div class="sub_menu" id="misc_menu" hidden>
+            <button id="reset">Reset All</button>
+        </div>
+    </div>
+    
+    <div id="displays">
+        <div id="char_display">
+            <h4 id="c_label">Combatants</h4>
+            <table id="c_table">
+            </table>
+        </div>
+
+        <div id="spl_display">
+            <h4 id="s_label">Spells/Effects</h4>
+            <table id="s_table">
+            </table>
+        </div>
+    </div>
+
+    <input id="next_round" type="button" value="Next Round!">
+    <script src="main.js" type="module"></script>
+</body>
+</html>

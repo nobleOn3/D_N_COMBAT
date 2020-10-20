@@ -180,7 +180,7 @@ function display_spells(){
     s_display.appendChild(newRow); 
 
     for(const element of s_list) {
-        console.log(element.name, element.duration);
+        //console.log(element.name, element.duration);
 
         newRow = document.createElement('tr');
         newCell = document.createElement('td');
@@ -189,6 +189,26 @@ function display_spells(){
 
         newCell = document.createElement('td');
         newCell.innerHTML = element.duration;
+        newRow.appendChild(newCell);
+
+        //create remove button for this spell
+        var newButton = document.createElement("BUTTON");
+        //newButton.type = "button";
+        newButton.id = element.name;
+        newButton.innerHTML = "X";
+        newButton.class = "spell_button";
+
+        //add event listener for the spell
+        newButton.addEventListener('click', (e) => {
+            //console.log(e);
+            //console.log(e.path[0]);
+            let removeIndex = s_list.findIndex(x => x.name === e.target.id);
+            s_list.splice(removeIndex, 1);
+            display_spells();
+        }, false); 
+
+        newCell = document.createElement('td');
+        newCell.appendChild(newButton);
         newRow.appendChild(newCell);
 
         s_display.appendChild(newRow);       
@@ -200,11 +220,15 @@ function add_spell(){
     let name = document.getElementById('spell_name').value;
     let dura = document.getElementById('duration').value;
 
+    dura = durationTranslate(dura);
+
     let s = new Spell(name, dura);
     s_list.push(s);
 
     document.getElementById('spell_name').value = "";
     document.getElementById('duration').value = "";
+    document.getElementById('hours').checked = false;
+    document.getElementById('minutes').checked = false;
 }
 
 function add_combatant(){
@@ -286,6 +310,18 @@ function gain_t_hp(t_hp){
 function reset_all(){
     c_list = [];
     s_list = [];
+}
+
+function durationTranslate(d){
+    if (document.getElementById("hours").checked){
+        return d * 600;
+    }
+    else if (document.getElementById("minutes").checked){
+        return d * 10;
+    }
+    else{
+        return d;
+    }
 }
 
 

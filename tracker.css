@@ -69,7 +69,9 @@
     width:74px;
     margin-right: 13px;
     margin-left:13px;
+    margin-top: 10px;
 }
+
 #reset{
     width:74px;
     margin-right: 13px;
@@ -185,6 +187,15 @@
 
 #next_round:hover{
     background-color: #EBE9E9;
+}
+
+label {
+    margin-left:5px;
+    color:white;
+}
+
+#hours{
+    margin-left: 18px;
 }
 
 body{

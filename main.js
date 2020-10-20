@@ -196,7 +196,7 @@ function display_spells(){
         //newButton.type = "button";
         newButton.id = element.name;
         newButton.innerHTML = "X";
-        newButton.class = "spell_button";
+        newButton.className = "spell_button";
 
         //add event listener for the spell
         newButton.addEventListener('click', (e) => {

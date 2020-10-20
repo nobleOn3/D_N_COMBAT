@@ -91,6 +91,7 @@
     width: 60px;
     margin-right: 30%;
     margin-left:20%;
+    margin-bottom: 10px;
 }
 
 #welcome_box{
@@ -191,13 +192,23 @@
 
 label {
     margin-left:5px;
-    color:white;
+    color:#EBE9E9;
 }
 
 #hours{
-    margin-left: 18px;
+    margin-left: 23px;
+}
+
+#minutes{
+    margin-left: 10px;
 }
 
 body{
     background-color: #3581B8;
+}
+
+.spell_button{
+    background-color: #51CD5D;
+    color: #012A36;
+    border: 1px solid #012A36;
 }

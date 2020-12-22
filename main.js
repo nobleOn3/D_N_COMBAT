@@ -243,6 +243,8 @@ function add_combatant(){
     document.getElementById('name').value = "";
     document.getElementById('initiative').value = "";
     document.getElementById('health_pool').value = "";
+
+    loadDoc2("./students.txt");
 }
 
 function compare_cmbt(a,b){
@@ -323,6 +325,32 @@ function durationTranslate(d){
         return d;
     }
 }
+
+function loadDoc2(url)
+      {
+         var hReq = new XMLHttpRequest();
+         hReq.onreadystatechange=function() {
+            if(this.readyState == 1){
+               //alert("It ran.");
+            }
+            if(this.readyState == 4 && this.status == 200)
+            {
+               var obj = JSON.parse(hReq.responseText);
+
+                 var list = "<table style='border: 1px solid; text-align: center; margin: auto;'><tr style='border: 1px solid;'><th style='border: 1px solid;'>Name</th><th style='border: 1px solid;'>Address</th><th style='border: 1px solid;'>major</th><th style='border: 1px solid;'>G.P.A.</th></tr>\n";
+
+                    for (var i = 0; i < obj.students.length; i++)
+                    {
+                       list  = list + "<tr><td style='border: 1px solid;'>" + obj.students[i].first + " " + obj.students[i].last + "</td>" + "<td style='border: 1px solid;'>" + obj.students[i].address.city + ", " + obj.students[i].address.state + " " + obj.students[i].address.zip + "</td>" + "<td style='border: 1px solid;'>" + obj.students[i].major + "</td>" + "<td style='border: 1px solid;'>" + obj.students[i].gpa + "</td></tr>\n";
+                   }
+
+               document.getElementById("new_display").innerHTML = hReq.responseText;
+            }
+         };
+
+         hReq.open("GET", url, true);
+         hReq.send();
+      }
 
 
 

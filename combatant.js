@@ -4,7 +4,7 @@
  *  for combat.
  *****************************************************************/
 export default class Combatant {
-    constructor(n, i, h, t) {
+    constructor(n, i, h, t = 0) {
         this.name = n;
         this.hp =  parseInt(h);
         this.temp_hp = parseInt(t);

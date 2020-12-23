@@ -49,6 +49,13 @@
     transition: 0.4s;
 
 }
+
+.spell_button{
+    background-color: #51CD5D;
+    color: #012A36;
+    border: 1px solid #012A36;
+}
+
 #name, #initiative, #health_pool{
     width: 85px;
     /*margin-right: 5px;*/
@@ -72,7 +79,7 @@
     margin-top: 10px;
 }
 
-#reset{
+#reset, #loadSaveButton{
     width:74px;
     margin-right: 13px;
     margin-left:13px;
@@ -85,6 +92,14 @@
     margin-left:5px;
     margin-bottom: 5px;
     margin-top: 5px;
+}
+
+#file {
+    width: 90px;
+    /*margin-right: 5px;*/
+    margin-left:5px;
+    margin-bottom: 5px;
+    margin-top: 20px;
 }
 
 #attack, #heal{
@@ -190,11 +205,6 @@
     background-color: #EBE9E9;
 }
 
-label {
-    margin-left:5px;
-    color:#EBE9E9;
-}
-
 #hours{
     margin-left: 23px;
 }
@@ -207,8 +217,7 @@ body{
     background-color: #3581B8;
 }
 
-.spell_button{
-    background-color: #51CD5D;
-    color: #012A36;
-    border: 1px solid #012A36;
+label {
+    margin-left:5px;
+    color:#EBE9E9;
 }

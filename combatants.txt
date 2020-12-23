@@ -1,0 +1,34 @@
+ {"combatants" :
+  [
+    { "name" : "Jay",
+      "init"  : "10",
+      "hp" : "201",
+      "thp" : "5"
+    },
+    { "name" : "Strahd",
+      "init"  : "21",
+      "hp" : "243",
+      "thp" : "10"
+    },
+    { "name" : "Korgoth",
+      "init"  : "20",
+      "hp" : "225",
+      "thp" : "0"
+    }, 
+    { "name" : "Baz",
+      "init"  : "13",
+      "hp" : "105",
+      "thp" : "0"
+    }, 
+    { "name" : "Vampire A",
+      "init"  : "15",
+      "hp" : "42",
+      "thp" : "0"
+    }, 
+    { "name" : "Vampire B",
+      "init"  : "15",
+      "hp" : "23",
+      "thp" : "2"
+    }   
+  ]
+}

@@ -59,6 +59,11 @@ document.getElementById('reset').addEventListener('click', () =>{
     display_spells();
 })
 
+document.getElementById('loadSaveButton').addEventListener('click', () =>{
+    let url = document.getElementById('file').value;
+    loadSave("./" + url);
+})
+
 
 //add event listeners for menus
 document.getElementById('add_C_menu').addEventListener('click', () => {
@@ -243,8 +248,6 @@ function add_combatant(){
     document.getElementById('name').value = "";
     document.getElementById('initiative').value = "";
     document.getElementById('health_pool').value = "";
-
-    loadDoc2("./students.txt");
 }
 
 function compare_cmbt(a,b){
@@ -326,31 +329,41 @@ function durationTranslate(d){
     }
 }
 
-function loadDoc2(url)
-      {
-         var hReq = new XMLHttpRequest();
-         hReq.onreadystatechange=function() {
-            if(this.readyState == 1){
-               //alert("It ran.");
-            }
-            if(this.readyState == 4 && this.status == 200)
+function loadSave(url)
+{
+    var hReq = new XMLHttpRequest();
+    hReq.onreadystatechange=function() {
+        if(this.readyState == 1){
+            alert("It ran.");
+        }
+        if(this.readyState == 4 && this.status == 200)
+        {
+            let name = "";
+            let init = "";
+            let hp = "";
+            let t_hp = "";
+            c_list = [];
+
+            var obj = JSON.parse(hReq.responseText);
+            for (var i = 0; i < obj.combatants.length; i++)
             {
-               var obj = JSON.parse(hReq.responseText);
+                name = obj.combatants[i].name;
+                init = obj.combatants[i].init;
+                hp = obj.combatants[i].hp;
+                t_hp = obj.combatants[i].thp;
 
-                 var list = "<table style='border: 1px solid; text-align: center; margin: auto;'><tr style='border: 1px solid;'><th style='border: 1px solid;'>Name</th><th style='border: 1px solid;'>Address</th><th style='border: 1px solid;'>major</th><th style='border: 1px solid;'>G.P.A.</th></tr>\n";
+                c_list.push(new Combatant(name, init, hp, t_hp));
+            }  
 
-                    for (var i = 0; i < obj.students.length; i++)
-                    {
-                       list  = list + "<tr><td style='border: 1px solid;'>" + obj.students[i].first + " " + obj.students[i].last + "</td>" + "<td style='border: 1px solid;'>" + obj.students[i].address.city + ", " + obj.students[i].address.state + " " + obj.students[i].address.zip + "</td>" + "<td style='border: 1px solid;'>" + obj.students[i].major + "</td>" + "<td style='border: 1px solid;'>" + obj.students[i].gpa + "</td></tr>\n";
-                   }
-
-               document.getElementById("new_display").innerHTML = hReq.responseText;
-            }
-         };
+            c_list.sort(compare_cmbt);  
+            display_combatants();
+                
+        }
+    };
 
          hReq.open("GET", url, true);
          hReq.send();
-      }
+ }
 
 
 
@@ -363,6 +376,15 @@ function loadDoc2(url)
 
 
 
+
+ //var list = "<table style='border: 1px solid; text-align: center; margin: auto;'><tr style='border: 1px solid;'><th style='border: 1px solid;'>Name</th><th style='border: 1px solid;'>Address</th><th style='border: 1px solid;'>major</th><th style='border: 1px solid;'>G.P.A.</th></tr>\n";
+
+                    // for (var i = 0; i < obj.students.length; i++)
+                    // {
+                    //    list  = list + "<tr><td style='border: 1px solid;'>" + obj.students[i].first + " " + obj.students[i].last + "</td>" + "<td style='border: 1px solid;'>" + obj.students[i].address.city + ", " + obj.students[i].address.state + " " + obj.students[i].address.zip + "</td>" + "<td style='border: 1px solid;'>" + obj.students[i].major + "</td>" + "<td style='border: 1px solid;'>" + obj.students[i].gpa + "</td></tr>\n";
+                    // }
+
+               //document.getElementById("new_display").innerHTML = hReq.responseText;
 
 
 
